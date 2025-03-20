@@ -259,7 +259,7 @@ const projects = [
       },
     ],
     image: aviation,
-    source_code_link: "https://github.com/",
+    source_code_link: "https://asraviation.com/",
   },
 ];
 
