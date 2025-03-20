@@ -1,12 +1,46 @@
-# React + Vite
+# 🚀 3D Portfolio Using Three.js, React Three Fiber, TailwindCSS & EmailJS
+## 🔗 Links
+[![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://gauravportfolio84599.netlify.app/)
+## 🌟 Overview  
+This is a **3D interactive portfolio** built with **React Three Fiber** (Three.js for React) and styled with **TailwindCSS**. It provides a smooth, immersive experience for showcasing skills, projects, and a contact form powered by **EmailJS**.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+---
 
-Currently, two official plugins are available:
+## 📌 Features  
+✅ **3D Model with Camera Controls** (OrbitControls)  
+✅ **Smooth Animations & Interactions** (GSAP, Drei)  
+✅ **Optimized Performance** (Lazy Loading, Suspense)  
+✅ **Customizable Themes & UI** (TailwindCSS)  
+✅ **Contact Form with EmailJS** (No Backend Needed)  
+✅ **Mobile Responsive**  
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🛠️ Tech Stack  
 
-## Expanding the ESLint configuration
+- ⚛ **React** (Vite Setup)  
+- 🎨 **React Three Fiber** (Three.js for 3D Graphics)  
+- 🏗 **Drei** (Helper utilities for React Three Fiber)  
+- 🎭 **Framer Motion** (Smooth UI animations)  
+- 🌈 **Tailwind CSS** (Modern & responsive styling)  
+- 📩 **EmailJS** (For contact form functionality)  
+- ⚡ **Vite** (For fast builds & hot reloading)  
+## **🚀 Getting Started**
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1️⃣ Setup `.env` File**
+Create a `.env` file in the project root directory with the following configuration:
+
+2️⃣ Install Dependencies
+Run the following command to install all required dependencies:
+
+bash
+npm install
+📦 Build the App
+To create a production build, use:
+
+bash
+npm run build
+
+▶️ Start the App
+To start the app in development mode, run:
+
+bash
+npm start
