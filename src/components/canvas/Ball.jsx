@@ -1,17 +1,11 @@
 import React, { Suspense } from "react";
-import { Canvas } from "@react-three/fiber";
-import {
-  Decal,
-  Float,
-  OrbitControls,
-  Preload,
-  useTexture,
-} from "@react-three/drei";
+import { Canvas, useLoader } from "@react-three/fiber";
+import { Decal, Float, OrbitControls, Preload } from "@react-three/drei";
+import { TextureLoader } from "three";
 import CanvasLoader from "../Loader";
 
 const Ball = ({ imgUrl }) => {
-  const fallback = "/assets/default.png";
-  const [decal] = useTexture([imgUrl || fallback]);
+  const texture = useLoader(TextureLoader, imgUrl || "/assets/logo.jpg");
 
   return (
     <Float speed={1.75} rotationIntensity={1} floatIntensity={2}>
@@ -29,7 +23,7 @@ const Ball = ({ imgUrl }) => {
           position={[0, 0, 1]}
           rotation={[2 * Math.PI, 0, 6.25]}
           scale={1}
-          map={decal}
+          map={texture}
           flatShading
         />
       </mesh>

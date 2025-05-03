@@ -1,3 +1,4 @@
+// ComputersCanvas.jsx
 import React, { Suspense, useEffect, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
@@ -5,6 +6,16 @@ import CanvasLoader from "../Loader";
 
 const Computers = ({ isMobile }) => {
   const { scene } = useGLTF("/desktop_pc/scene.gltf");
+
+  useEffect(() => {
+    scene.traverse((child) => {
+      if (child.isMesh && child.material?.map) {
+        console.log(`✅ Texture found on ${child.name}`);
+      } else if (child.isMesh) {
+        console.warn(`❌ No texture on ${child.name}`);
+      }
+    });
+  }, [scene]);
 
   return (
     <mesh>
@@ -20,7 +31,7 @@ const Computers = ({ isMobile }) => {
       <pointLight intensity={9} />
       <primitive
         object={scene}
-        scale={isMobile ? 0.7 : 0.75}
+        scale={isMobile ? 0.6 : 0.65}
         position={isMobile ? [0, -2.5, -2.2] : [0, -3.75, -1.5]}
         rotation={[-0.01, -0.2, -0.1]}
       />
@@ -67,5 +78,7 @@ const ComputersCanvas = () => {
     </Canvas>
   );
 };
+
+useGLTF.preload("/desktop_pc/scene.gltf");
 
 export default ComputersCanvas;
