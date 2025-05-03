@@ -19,17 +19,12 @@ const Contact = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-
-    setForm({
-      ...form,
-      [name]: value,
-    });
+    setForm({ ...form, [name]: value });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Form validation
     if (!form.name || !form.email || !form.message) {
       alert("Please fill in all fields.");
       return;
@@ -43,28 +38,23 @@ const Contact = () => {
     setLoading(true);
 
     emailjs
-  .send(
-    import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
-    import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
-    {
-      from_name: form.name,
-      to_name: "Gaurav Sehrawat",
-      from_email: form.email,
-      to_email: "work.gauravsehrawat772@gmail.com",
-      message: form.message,
-    },
-    import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
-  )
+      .send(
+        import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
+        {
+          from_name: form.name,
+          to_name: "Gaurav Sehrawat",
+          from_email: form.email,
+          to_email: "work.gauravsehrawat772@gmail.com",
+          message: form.message,
+        },
+        import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
+      )
       .then(
         () => {
           setLoading(false);
           alert("Thank you. I will get back to you as soon as possible.");
-
-          setForm({
-            name: "",
-            email: "",
-            message: "",
-          });
+          setForm({ name: "", email: "", message: "" });
         },
         (error) => {
           setLoading(false);
@@ -75,9 +65,7 @@ const Contact = () => {
   };
 
   return (
-    <div
-      className="flex xl:flex-row flex-col-reverse gap-10 overflow-hidden"
-    >
+    <div className="flex xl:flex-row flex-col-reverse gap-10 overflow-hidden">
       <motion.div
         variants={slideIn("left", "tween", 0.2, 1)}
         className="flex-[0.75] bg-black-100 p-8 rounded-2xl"
